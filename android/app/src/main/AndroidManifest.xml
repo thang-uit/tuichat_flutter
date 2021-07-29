@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thanguit.tuichat.tuichat_flutter">
    <application
-        android:label="tuichat_flutter"
+        android:label="TuiChat"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
