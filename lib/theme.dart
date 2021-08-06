@@ -14,7 +14,8 @@ ThemeData lightThemeData(BuildContext context) {
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: appBarTheme,
     iconTheme: IconThemeData(color: kContentColorLightTheme),
-    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme).apply(bodyColor: kContentColorLightTheme),
+    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+        .apply(bodyColor: kContentColorLightTheme), // Text color
     colorScheme: ColorScheme.light(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
@@ -31,12 +32,15 @@ ThemeData lightThemeData(BuildContext context) {
 }
 
 ThemeData darkThemeData(BuildContext context) {
+  // By default flutter provide us light and dark theme
+  // we just modify it as our need
   return ThemeData.dark().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: kContentColorLightTheme,
     appBarTheme: appBarTheme,
     iconTheme: IconThemeData(color: kContentColorDarkTheme),
-    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme).apply(bodyColor: kContentColorDarkTheme),
+    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+        .apply(bodyColor: kContentColorDarkTheme),
     colorScheme: ColorScheme.dark().copyWith(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
