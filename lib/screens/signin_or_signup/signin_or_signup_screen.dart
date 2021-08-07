@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tuichat_flutter/chats/chat_screen.dart';
 import 'package:tuichat_flutter/components/primary_button.dart';
 import '../../constants.dart';
 
@@ -18,12 +19,16 @@ class SigninOrSignupScreen extends StatelessWidget {
                   : "assets/images/logo_dark.png",
               height: 140),
           Spacer(),
-          PrimaryButton(text: "Sign In", press: () {}),
+          PrimaryButton(
+              text: "Sign In",
+              press: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ChatScreen()))),
           SizedBox(height: kDefaultPadding * 1.5),
           PrimaryButton(
               color: Theme.of(context).colorScheme.secondary,
               text: "Sign Up",
-              press: () {}),
+              press: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ChatScreen()))),
           Spacer(flex: 2),
         ],
       ),
