@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tuichat_flutter/constants.dart';
+import 'package:tuichat_flutter/screens/signin_or_signup/signin_or_signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -34,7 +34,10 @@ class WelcomeScreen extends StatelessWidget {
             Spacer(flex: 3),
             FittedBox(
                 child: TextButton(
-                    onPressed: onPressed,
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SigninOrSignupScreen())),
                     child: Row(
                       children: [
                         Text(
@@ -65,6 +68,4 @@ class WelcomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  void onPressed() {}
 }
