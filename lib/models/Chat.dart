@@ -15,21 +15,21 @@ class Chat {
 
 var chatData = [
   Chat(
-      name: "Nguyễn Thị Hồng Thủy",
+      name: "Nguyễn Thị Hồng Thủy ",
       lastMessage: "Hey, my Ex!",
       image: "assets/images/user_5.png",
       time: "3m ago",
       isActive: false),
   Chat(
     name: "Esther Howard",
-    lastMessage: "Hello Abdullah! I am...",
+    lastMessage: "Hello Abdullah! I am Hello Abdullah! I am Hello Abdullah! I am",
     image: "assets/images/user_2.png",
     time: "8m ago",
     isActive: true,
   ),
   Chat(
     name: "Ralph Edwards",
-    lastMessage: "Do you have update...",
+    lastMessage: "Do you have update",
     image: "assets/images/user_3.png",
     time: "5d ago",
     isActive: false,
@@ -50,21 +50,21 @@ var chatData = [
   ),
   Chat(
     name: "Jenny Wilson",
-    lastMessage: "Hope you are doing well...",
+    lastMessage: "Hope you are doing well",
     image: "assets/images/user_1.png",
     time: "3m ago",
     isActive: false,
   ),
   Chat(
     name: "Esther Howard",
-    lastMessage: "Hello Abdullah! I am...",
+    lastMessage: "Hello Abdullah! I am",
     image: "assets/images/user_2.png",
     time: "8m ago",
     isActive: true,
   ),
   Chat(
     name: "Ralph Edwards",
-    lastMessage: "Do you have update...",
+    lastMessage: "Do you have update",
     image: "assets/images/user_3.png",
     time: "5d ago",
     isActive: false,

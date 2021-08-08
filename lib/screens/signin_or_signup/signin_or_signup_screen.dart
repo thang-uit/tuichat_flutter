@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuichat_flutter/chats/chat_screen.dart';
+import 'package:tuichat_flutter/screens/chats/chats_screen.dart';
 import 'package:tuichat_flutter/components/primary_button.dart';
 import '../../constants.dart';
 
