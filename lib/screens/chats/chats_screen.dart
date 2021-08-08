@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tuichat_flutter/screens/chats/components/body.dart';
-
 import '../../constants.dart';
 
 class ChatScreen extends StatefulWidget {

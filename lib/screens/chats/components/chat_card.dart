@@ -37,13 +37,12 @@ class ChatCard extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: kStatusOnlineColor),
                         ),
-                      )
-                  ]
+                      ),
+                  ],
               ),
               Expanded(
                   child: Padding(
-                      padding:
-                      const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -63,7 +62,8 @@ class ChatCard extends StatelessWidget {
                                 textAlign: TextAlign.left,
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
-                              )),
+                              )
+                          ),
                         ],
                       )
                   )
