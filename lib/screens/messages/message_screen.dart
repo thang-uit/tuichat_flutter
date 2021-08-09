@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
+import 'components/body.dart';
 
 class MessageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      body: Body(),
     );
   }
 

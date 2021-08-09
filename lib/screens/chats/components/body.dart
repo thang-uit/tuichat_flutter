@@ -24,13 +24,14 @@ class ChatBody extends StatelessWidget {
         ),
         Expanded(
             child: ListView.builder(
-          itemCount: chatData.length,
-          itemBuilder: (context, index) => ChatCard(
-            chat: chatData[index],
-            press: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MessageScreen())),
-          ),
-        )),
+              itemCount: chatData.length,
+              itemBuilder: (context, index) => ChatCard(
+                chat: chatData[index],
+                press: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MessageScreen())),
+              ),
+            ),
+        ),
       ],
     );
   }
