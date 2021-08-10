@@ -18,7 +18,7 @@ class ChatMessage {
       required this.isSender});
 }
 
-var demoChatMessages = [
+var chatMessages = [
   ChatMessage(
     text: "Hi Sajol,",
     messageType: ChatMessageType.text,
