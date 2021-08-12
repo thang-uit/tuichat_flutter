@@ -7,7 +7,7 @@ class ChatMessage {
   final MessageStatus messageStatus;
   final bool isSender;
 
-  // Một function có thể có 2 loại parameter: required(là những parame cần phải có)
+  // Một function có thể có 2 loại parameter: required(là những parameter cần phải có)
   // và optional(là những parameter có truyền hay vào hay không cũng được,
   // nếu không truyền thì giá trị của parameter đó là null).
   // Required parameters sẽ được viết trước, theo sau là các optional parameters.
@@ -47,6 +47,42 @@ var chatMessages = [
     text: "Error happend",
     messageType: ChatMessageType.text,
     messageStatus: MessageStatus.not_sent,
+    isSender: true,
+  ),
+  ChatMessage(
+    text: "This looks great man!!",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.viewed,
+    isSender: false,
+  ),
+  ChatMessage(
+    text: "Glad you like it",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.not_view,
+    isSender: true,
+  ),
+  ChatMessage(
+    text: "This looks great man!!",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.viewed,
+    isSender: false,
+  ),
+  ChatMessage(
+    text: "Glad you like it",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.not_view,
+    isSender: true,
+  ),
+  ChatMessage(
+    text: "This looks great man!!",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.viewed,
+    isSender: false,
+  ),
+  ChatMessage(
+    text: "Glad you like it",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.not_view,
     isSender: true,
   ),
   ChatMessage(

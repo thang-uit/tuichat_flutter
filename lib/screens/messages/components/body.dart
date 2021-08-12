@@ -75,12 +75,13 @@ class Body extends StatelessWidget {
 }
 
 class Message extends StatelessWidget {
+  final ChatMessage chatMessage;
+
   const Message({
     Key? key,
     required this.chatMessage,
   }) : super(key: key);
 
-  final ChatMessage chatMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +99,7 @@ class Message extends StatelessWidget {
           }
         case ChatMessageType.video:
           {
-            return TextMessage(chatMessage: chatMessage);
+            return VideoMessage();
             break;
           }
         case ChatMessageType.audio:
@@ -115,7 +116,7 @@ class Message extends StatelessWidget {
     }
 
     return Container(
-      margin: EdgeInsets.fromLTRB(kDefaultPadding * 0.5 , kDefaultPadding * 0.5, kDefaultPadding * 0.5, 0),
+      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding * 0.25, vertical: kDefaultPadding * 0.5),
       child: Row(
         mainAxisAlignment: this.chatMessage.isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
@@ -127,6 +128,7 @@ class Message extends StatelessWidget {
             SizedBox(width: kDefaultPadding / 4),
           ],
           messageContent(this.chatMessage),
+          if (this.chatMessage.isSender) MessageStatusDot(messageStatus: this.chatMessage.messageStatus)
         ],
       ),
     );
@@ -210,4 +212,82 @@ class AudioMessage extends StatelessWidget{
     );
   }
 
+}
+
+class VideoMessage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.45, // 45% of total width
+      child: AspectRatio(
+        aspectRatio: 1.6,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: Image.asset("assets/images/video_place_here.png"),
+            ),
+            Container(
+              height: 25,
+              width: 25,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: kPrimaryColor,
+              ),
+              child: Icon(Icons.play_arrow_rounded, size: 16),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MessageStatusDot extends StatelessWidget {
+  final MessageStatus messageStatus;
+
+  const MessageStatusDot({
+    Key? key,
+    required this.messageStatus,
+  }): super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    Color dotColor(MessageStatus messageStatus){
+      switch (messageStatus){
+        case MessageStatus.not_sent: {
+          return kErrorColor;
+          break;
+        }
+        case MessageStatus.not_view: {
+          return Theme.of(context).textTheme.bodyText1!.color!.withOpacity(0.2);
+          break;
+        }
+        case MessageStatus.viewed: {
+          return kPrimaryColor;
+          break;
+        }
+
+        default:{
+          return Colors.transparent;
+        }
+      }
+    }
+
+    return Container(
+      margin: EdgeInsets.only(left: kDefaultPadding / 5),
+      height: 12,
+      width: 12,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: dotColor(this.messageStatus),
+      ),
+      child: Icon(
+        this.messageStatus == MessageStatus.not_sent ? Icons.close :  Icons.done_rounded,
+          color: Colors.black,
+          size: 8),
+    );
+  }
 }
